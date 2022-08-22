@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //利用reduce 求 1-100的和
+      let res = new Array(100)
+        .fill()
+        .map((item, index) => index + 1)
+        .reduce((total, cur) => total + cur, 0);
+      console.log(res);
+
+      //reduce笔试原题
+      const getURLParameters = url =>
+        (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce(
+            (a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a),
+            {}
+        );
+    var url = 'http://www.baidu.com/?name=zhangsan&age=18&sex=nan';
+    console.log(getURLParameters(url))
+    </script>
+  </body>
+</html>
